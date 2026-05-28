@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KASIF | Cyber Hub & Code Repository</title>
+    <title>KASIF | Cyber Matrix Utility</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playball&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body, html {
-            background-color: #050505;
+            background-color: #030303;
             color: #00ff41;
             min-height: 100vh;
             width: 100%;
@@ -24,15 +24,15 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            opacity: 0.12;
+            opacity: 0.15;
         }
         .wrapper {
             position: relative;
             z-index: 10;
-            max-width: 700px;
+            max-width: 600px;
             width: 100%;
             margin: 0 auto;
-            padding: 30px 15px;
+            padding: 35px 20px;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -56,7 +56,7 @@
         .social-box {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             padding: 12px;
             background: rgba(10, 10, 10, 0.9);
             border: 1px solid #00ff41;
@@ -65,7 +65,7 @@
         }
         .social-box a {
             color: #00ff41;
-            font-size: 28px;
+            font-size: 30px;
             transition: all 0.3s;
         }
         .social-box a:hover {
@@ -73,14 +73,14 @@
             transform: scale(1.15);
             text-shadow: 0 0 15px #00ff41;
         }
-        .panel-box {
-            background: rgba(10, 10, 10, 0.95);
+        .tool-card {
+            background: rgba(8, 8, 8, 0.95);
             border: 1px solid #113311;
             border-radius: 10px;
-            padding: 18px;
+            padding: 20px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.9);
         }
-        .panel-box h3 {
+        .tool-card h3 {
             font-size: 16px;
             color: #ffffff;
             margin-bottom: 12px;
@@ -90,49 +90,45 @@
             border-bottom: 1px dashed #113311;
             padding-bottom: 6px;
         }
-        .panel-box h3 i { color: #00ff41; }
+        .tool-card h3 i { color: #00ff41; }
         
-        /* Code Editor Style Viewport */
-        .code-window {
-            background: #020202;
-            border: 1px solid #1a441a;
-            border-radius: 6px;
-            padding: 12px;
-            max-height: 300px;
-            overflow-y: auto;
-            color: #a0ffa0;
-            font-size: 12px;
-            line-height: 1.5;
-            text-align: left;
-            white-space: pre;
-        }
-        
-        input, button {
+        textarea, input, button {
             width: 100%;
-            padding: 10px;
+            padding: 11px;
             background: #000;
             border: 1px solid #113311;
             color: #00ff41;
             font-family: 'Share Tech Mono', monospace;
             font-size: 13px;
             border-radius: 5px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             outline: none;
+            resize: none;
+        }
+        textarea:focus, input:focus { border-color: #00ff41; }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
         }
         button {
-            background: #001a00;
+            background: #001f00;
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s;
         }
         button:hover { background: #00ff41; color: #000; box-shadow: 0 0 10px #00ff41; }
+        
         .result-box {
             padding: 10px;
-            background: #000;
+            background: #020202;
             border-left: 3px solid #00ff41;
             font-size: 12px;
+            white-space: pre-line;
             margin-top: 5px;
             display: none;
+            color: #a0ffa0;
+            word-break: break-all;
         }
         footer {
             text-align: center;
@@ -148,7 +144,7 @@
     <div class="wrapper">
         <header>
             <div class="brand-title">Kasif</div>
-            <div class="sub-title">// MAINFRAME REPOSITORY V2.0 //</div>
+            <div class="sub-title">// SECURITY & UTILITY CONTROL //</div>
         </header>
 
         <div class="social-box">
@@ -157,47 +153,28 @@
             <a href="https://wa.me/584262211965" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
 
-        <div class="panel-box">
-            <h3><i class="fa-solid fa-code"></i> Repository File: alfiya_ki_file.py</h3>
-            <div class="code-window">import os
-import sys
-import requests
-import threading
-from concurrent.futures import ThreadPoolExecutor
-
-# System Core Configurations
-CONFIG = {
-    "insta_graphql": "https://www.instagram.com/api/graphql",
-    "channel": "https://t.me/alfiyaa18",
-    "dev": "@Alfiya_here"
-}
-
-def stats_monitor():
-    print("[*] Launching Matrix Terminal Core...")
-    print("[+] System Active and Synchronized.")
-
-if __name__ == "__main__":
-    stats_monitor()</div>
+        <div class="tool-card">
+            <h3><i class="fa-solid fa-user-secret"></i> Secret Cipher Encrypter</h3>
+            <textarea id="cipherText" rows="3" placeholder="Yahan apna secret message likho ya secret code paste karo..."></textarea>
+            <div class="btn-group">
+                <button onclick="processCipher('encrypt')">LOCK (ENCRYPT)</button>
+                <button onclick="processCipher('decrypt')">UNLOCK (DECRYPT)</button>
+            </div>
+            <div id="cipherResult" class="result-box"></div>
         </div>
 
-        <div class="panel-box">
-            <h3><i class="fa-solid fa-satellite-dish"></i> Target IP Geolocation</h3>
-            <input type="text" id="ipInput" placeholder="Enter target IP (Leave blank for yours)">
-            <button onclick="trackIP()">RUN TRACE SEQUENCE</button>
+        <div class="tool-card">
+            <h3><i class="fa-solid fa-network-wired"></i> Network Node Lookup</h3>
+            <input type="text" id="ipInput" placeholder="Koi bhi IP Address ya Hostname daalo (e.g. 8.8.8.8)">
+            <button onclick="trackIP()">SCAN NODE DETAILS</button>
             <div id="ipResult" class="result-box"></div>
         </div>
 
-        <div class="panel-box">
-            <h3><i class="fa-solid fa-key"></i> Automated Token Generator</h3>
-            <button onclick="genPassword()">GENERATE SECURE UTILITY KEY</button>
-            <div id="passResult" class="result-box"></div>
-        </div>
-
-        <footer>&copy; 2026 KASIF SYSTEM WORKSPACE. CODES LOCKED.</footer>
+        <footer>&copy; 2026 KASIF FRAMEWORK. STABLE CORE ACTIVE.</footer>
     </div>
 
     <script>
-        // Background Matrix Generation
+        // Matrix Rain Setup
         const canvas = document.getElementById('matrix');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth; canvas.height = window.innerHeight;
@@ -216,33 +193,50 @@ if __name__ == "__main__":
         };
         setInterval(draw, 30);
 
-        // Geolocation Logic
+        // Cipher Logic
+        function processCipher(action) {
+            const input = document.getElementById('cipherText').value.trim();
+            const resBox = document.getElementById('cipherResult');
+            if(!input) {
+                resBox.style.display = 'block';
+                resBox.innerText = '⚠️ Error: Input field khali hai!';
+                return;
+            }
+            resBox.style.display = 'block';
+            if(action === 'encrypt') {
+                try {
+                    const encoded = btoa(encodeURIComponent(input));
+                    resBox.innerText = `[+] ENCRYPTED SECRET CODE:\n\n${encoded}`;
+                } catch(e) {
+                    resBox.innerText = '❌ Encryption failed.';
+                }
+            } else {
+                try {
+                    const decoded = decodeURIComponent(atob(input));
+                    resBox.innerText = `[+] DECRYPTED ORIGINAL TEXT:\n\n${decoded}`;
+                } catch(e) {
+                    resBox.innerText = '❌ Invalid Code! Yeh code sahi tarike se decrypted nahi ho sakta.';
+                }
+            }
+        }
+
+        // Host IP Data Logic
         async function trackIP() {
             const ip = document.getElementById('ipInput').value.trim();
             const resBox = document.getElementById('ipResult');
             resBox.style.display = 'block';
-            resBox.innerText = 'Querying global nodes... Loading geo-coordinates...';
+            resBox.innerText = 'Scanning target infrastructure nodes...';
             try {
                 const response = await fetch(`https://ipapi.co/${ip}/json/`);
                 const data = await response.json();
                 if(data.error) {
-                    resBox.innerText = 'Trace Error: Host Unreachable or Invalid Node.';
+                    resBox.innerText = '❌ Error: Host target invalid ya details offline hain.';
                 } else {
-                    resBox.innerText = `[+] IP NODE   : ${data.ip}\n[+] LOCATION  : ${data.city}, ${data.region} (${data.country_name})\n[+] ROUTER ISP: ${data.org}\n[+] COORDS    : ${data.latitude}, ${data.longitude}`;
+                    resBox.innerText = `[+] TARGET      : ${data.ip}\n[+] LOCATION    : ${data.city}, ${data.region} (${data.country_name})\n[+] NETWORK ORG : ${data.org}\n[+] TIMEZONE    : ${data.timezone}`;
                 }
             } catch (e) {
-                resBox.innerText = 'Firewall Interception. Connection timed out.';
+                resBox.innerText = '❌ Connection Interrupted.';
             }
-        }
-
-        // Encryption Key Gen Logic
-        function genPassword() {
-            const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
-            let pass = "";
-            for (let i = 0; i < 16; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
-            const resBox = document.getElementById('passResult');
-            resBox.style.display = 'block';
-            resBox.innerText = `[ LOCAL DEPLOYMENT KEY ]\n${pass}`;
         }
 
         window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
