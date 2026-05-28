@@ -1,44 +1,58 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KASIF | ELITE CYBER PORTFOLIO</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>KASIF | ELITE CYBER OPS</title>
     <style>
-        :root { --neon: #00ff41; --bg: #050505; }
-        body { margin: 0; background: var(--bg); color: #fff; font-family: sans-serif; text-align: center; }
-        .hero { padding: 40px 20px; }
-        .profile { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--neon); margin-bottom: 15px; }
-        .name { font-size: 3rem; margin: 0; color: var(--neon); }
-        .section { background: #111; padding: 20px; border-radius: 20px; max-width: 500px; margin: 20px auto; border-left: 5px solid var(--neon); }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .item { padding: 10px; background: #222; border-radius: 8px; }
-        .cta-btn { display: block; width: 80%; margin: 20px auto; padding: 15px; background: var(--neon); color: #000; font-weight: bold; border-radius: 10px; text-decoration: none; }
-        .social-icons { display: flex; justify-content: center; gap: 20px; font-size: 1.8rem; margin-top: 30px; }
-        .social-icons a { color: var(--neon); }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Courier New', monospace; }
+        canvas { display: block; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none; }
+        .card { 
+            background: rgba(0, 20, 20, 0.85); border: 2px solid #0f0; padding: 30px; border-radius: 20px;
+            backdrop-filter: blur(10px); text-align: center; color: #0f0; width: 320px; box-shadow: 0 0 20px #0f0;
+            pointer-events: auto;
+        }
+        .dp { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #0f0; margin-bottom: 15px; background: url('https://img.freepik.com/free-vector/cyberpunk-hacker-character_23-2148530364.jpg'); background-size: cover; }
+        .btn { display: block; background: #0f0; color: #000; padding: 12px; margin-top: 20px; text-decoration: none; font-weight: bold; border-radius: 5px; }
+        a { color: #fff; text-decoration: none; display: block; margin: 5px 0; }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <img src="bg.jpg" class="profile" alt="Kasif">
-        <h1 class="name">KASIF</h1>
-        <p>CYBER-SECURITY & WEB SOLUTIONS</p>
-        <div class="section">
-            <h3>🚀 EXPERTISE AREA</h3>
-            <div class="grid">
-                <div class="item">Web Development</div>
-                <div class="item">Telegram Automation</div>
-                <div class="item">Instagram Audit</div>
-                <div class="item">Account Recovery</div>
+    <canvas id="matrix"></canvas>
+    <div class="overlay">
+        <div class="card">
+            <div class="dp"></div>
+            <h2>KASIF</h2>
+            <p>ELITE CYBER-OPERATOR</p>
+            <div style="text-align: left; font-size: 0.9rem;">
+                <p>✉️ k4sifx@gmail.com</p>
+                <p>📸 @k4sifx__</p>
+                <p>👻 k4sif.7</p>
+                <p>✈️ @K4sifx</p>
             </div>
-        </div>
-        <a href="https://wa.me/584262211965" class="cta-btn">HIRE ME NOW</a>
-        <div class="social-icons">
-            <a href="https://t.me/K4sifx"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://www.instagram.com/kasifxdigital"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/584262211965" class="btn">SECURE ACCESS</a>
         </div>
     </div>
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const katakana = '0101010101';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0F0'; ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = katakana.charAt(Math.floor(Math.random() * katakana.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw, 33);
+    </script>
 </body>
 </html>
-
