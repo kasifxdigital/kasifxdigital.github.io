@@ -1,58 +1,42 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KASIF | ELITE CYBER OPS</title>
+    <title>KASIF | DIGITAL PROFILE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Courier New', monospace; }
-        canvas { display: block; }
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none; }
-        .card { 
-            background: rgba(0, 20, 20, 0.85); border: 2px solid #0f0; padding: 30px; border-radius: 20px;
-            backdrop-filter: blur(10px); text-align: center; color: #0f0; width: 320px; box-shadow: 0 0 20px #0f0;
-            pointer-events: auto;
-        }
-        .dp { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #0f0; margin-bottom: 15px; background: url('https://img.freepik.com/free-vector/cyberpunk-hacker-character_23-2148530364.jpg'); background-size: cover; }
-        .btn { display: block; background: #0f0; color: #000; padding: 12px; margin-top: 20px; text-decoration: none; font-weight: bold; border-radius: 5px; }
-        a { color: #fff; text-decoration: none; display: block; margin: 5px 0; }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body { margin: 0; background: #05070a; color: #00e5ff; font-family: 'Orbitron', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .profile-card { width: 350px; background: #0d1117; border: 2px solid #00e5ff; padding: 30px; border-radius: 25px; box-shadow: 0 0 40px rgba(0, 229, 255, 0.2); text-align: center; }
+        .logo-box { font-size: 50px; color: #00e5ff; border: 3px solid #00e5ff; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 20px; }
+        .about-section { text-align: left; background: #161b22; padding: 15px; border-radius: 10px; font-size: 13px; line-height: 1.6; color: #c9d1d9; border-left: 4px solid #00e5ff; margin-bottom: 20px; }
+        .contact-list { text-align: left; margin-bottom: 25px; }
+        .contact-list a { display: block; color: #00e5ff; text-decoration: none; margin-bottom: 12px; font-size: 15px; }
+        .contact-list i { width: 30px; color: #fff; }
+        .hire-btn { display: block; background: #00e5ff; color: #000; padding: 15px; border-radius: 10px; font-weight: bold; text-decoration: none; }
     </style>
 </head>
 <body>
-    <canvas id="matrix"></canvas>
-    <div class="overlay">
-        <div class="card">
-            <div class="dp"></div>
-            <h2>KASIF</h2>
-            <p>ELITE CYBER-OPERATOR</p>
-            <div style="text-align: left; font-size: 0.9rem;">
-                <p>✉️ k4sifx@gmail.com</p>
-                <p>📸 @k4sifx__</p>
-                <p>👻 k4sif.7</p>
-                <p>✈️ @K4sifx</p>
-            </div>
-            <a href="https://wa.me/584262211965" class="btn">SECURE ACCESS</a>
+    <div class="profile-card">
+        <div class="logo-box">K</div>
+        <div style="font-size: 24px; color: #fff;">KASIF</div>
+        <div style="color: #00e5ff; margin-bottom: 20px;">ELITE CYBER OPERATOR</div>
+        
+        <div class="about-section">
+            <strong>ABOUT ME:</strong><br>
+            Professional Web Developer & Security Specialist. Expert in Telegram automation, account recovery, and digital infrastructure. Elite solutions, 24/7.
         </div>
+
+        <div class="contact-list">
+            <a href="mailto:k4sifx@gmail.com"><i class="fa-solid fa-envelope"></i> k4sifx@gmail.com</a>
+            <a href="https://www.instagram.com/k4sifx__/"><i class="fa-brands fa-instagram"></i> @k4sifx__</a>
+            <a href="https://www.snapchat.com/add/k4sif.7"><i class="fa-brands fa-snapchat"></i> k4sif.7</a>
+            <a href="https://t.me/K4sifx"><i class="fa-brands fa-telegram"></i> @K4sifx</a>
+        </div>
+
+        <a href="https://wa.me/584262211965" class="hire-btn">HIRE ME VIA WHATSAPP</a>
     </div>
-    <script>
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-        const katakana = '0101010101';
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#0F0'; ctx.font = fontSize + 'px monospace';
-            for (let i = 0; i < drops.length; i++) {
-                const text = katakana.charAt(Math.floor(Math.random() * katakana.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                drops[i]++;
-            }
-        }
-        setInterval(draw, 33);
-    </script>
 </body>
 </html>
+
