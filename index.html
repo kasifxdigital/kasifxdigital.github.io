@@ -1,31 +1,42 @@
-export default function KasifEliteWebsite() { return ( <div className="min-h-screen bg-black text-white overflow-hidden font-sans"> <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,140,255,0.25),transparent_40%)]"></div>
+export default function KasifEliteWebsite() { return ( <div className="min-h-screen bg-gradient-to-br from-black via-blue-950 to-black text-white overflow-hidden font-sans"> <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,140,255,0.25),transparent_40%)]"></div>
 
-<header className="relative z-10 border-b border-blue-900/40 backdrop-blur-md bg-black/40 sticky top-0">
+<header className="relative z-10 border-b border-cyan-500/30 backdrop-blur-xl bg-black/60 sticky top-0 shadow-2xl shadow-cyan-500/20">
     <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <h1 className="text-2xl md:text-3xl font-black tracking-widest">
-        KASIF <span className="text-blue-500">ELITE</span>
+      <h1 className="text-4xl md:text-5xl font-black tracking-[8px] bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(0,170,255,0.8)] animate-pulse">
+        KASIF ELITE
       </h1>
 
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <a
           href="https://instagram.com/k4sifx__"
           target="_blank"
-          className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center text-xl font-black shadow-lg hover:scale-110 transition"
+          className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center text-white text-xl font-black shadow-2xl hover:scale-110 transition-all duration-300"
         >
-          IG
+          📸
         </a>
+
         <a
-          href="https://instagram.com/k4sifx__"
-          className="px-5 py-2 rounded-2xl bg-blue-600 hover:bg-blue-700 transition"
+          href="https://wa.me/584262211965"
+          target="_blank"
+          className="w-14 h-14 rounded-2xl bg-green-500 flex items-center justify-center text-white text-xl shadow-2xl hover:scale-110 transition-all duration-300"
         >
-          Instagram
+          💬
         </a>
 
         <a
           href="https://t.me/K4sifx"
-          className="px-5 py-2 rounded-2xl border border-blue-500 hover:bg-blue-500/20 transition"
+          target="_blank"
+          className="w-14 h-14 rounded-2xl bg-blue-500 flex items-center justify-center text-white text-xl shadow-2xl hover:scale-110 transition-all duration-300"
         >
-          Telegram
+          ✈️
+        </a>
+
+        <a
+          href="mailto:k4sifx@gmail.com"
+          target="_blank"
+          className="w-14 h-14 rounded-2xl bg-purple-500 flex items-center justify-center text-white text-xl shadow-2xl hover:scale-110 transition-all duration-300"
+        >
+          📧
         </a>
       </div>
     </div>
@@ -153,7 +164,7 @@ export default function KasifEliteWebsite() { return ( <div className="min-h-scr
         ].map((item, index) => (
           <div
             key={index}
-            className="group bg-black border border-blue-900/40 hover:border-blue-500 rounded-[32px] p-8 transition-all hover:-translate-y-2"
+            className="group bg-gradient-to-br from-zinc-950 to-blue-950 border border-cyan-500/20 hover:border-cyan-400 rounded-[32px] p-8 transition-all hover:-translate-y-3 hover:shadow-2xl hover:shadow-cyan-500/30"
           >
             <div className="text-5xl mb-6">{item.icon}</div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-400 transition">
